@@ -74,7 +74,7 @@ LAB SETUP INSTRUCTIONS
  *   - return JSON: { ok:true, userId: req.userIdNum }
  *   HINT:
  *     app.get("/users/:userId", (req,res)=>{ ... });
- *
+ *    
  *============================================
  *Test the following URLS
  *============================================
@@ -140,7 +140,8 @@ app.param("userId", (req,res,next,userId)=>{
 });
 
 // Route params: /users/:userId route
-
+app.get("/users/:userId", (req,res)=>{ res.json({ 
+   ok:true, userId: req.userIdNum }); });
 
 // Start the server by listening
 
