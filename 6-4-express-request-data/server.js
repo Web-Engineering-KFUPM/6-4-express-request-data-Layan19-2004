@@ -123,6 +123,9 @@ app.get("/echo", (req,res)=>{ if (!req.query.name || !req.query.age) {
 
 
 // Route params: /profile/First/Last
+app.get("/profile/:first/:last", (req,res)=>{ 
+   const { first, last } = req.params;
+   res.json({ ok:true, fullName: `${first} ${last}` });});
 
 
 // Route param middleware example: /users/42
