@@ -111,7 +111,6 @@ import express from "express";
 const app = express();
 
 
-
 // Query params: /echo?name=Ali&age=22
 app.get("/echo", (req,res)=>{ if (!req.query.name || !req.query.age) {
   res.status(400).json({ ok:false, error:"name & age required" });
@@ -144,5 +143,9 @@ app.get("/users/:userId", (req,res)=>{ res.json({
    ok:true, userId: req.userIdNum }); });
 
 // Start the server by listening
+app.get("/", (req, res) => {
+  res.send("Server is up");
+});
+
 app.listen(3000, ()=> console.log("API running at http://localhost:3000"));
 
